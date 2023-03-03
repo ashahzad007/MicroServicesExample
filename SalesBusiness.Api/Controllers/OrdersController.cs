@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SalesBusiness.Api.Data;
 using SalesBusiness.Api.Data.Entities;
+using SalesBusiness.Api.DTOs;
 
 namespace SalesBusiness.Api.Controllers
 {
@@ -22,7 +23,27 @@ namespace SalesBusiness.Api.Controllers
 
         public async Task<IActionResult> GetAsync() // get all data from Orders Table
         {
-            var orders = await _salesContext.Orders.ToListAsync();
+            //var orders = await _salesContext.Orders.ToListAsync();
+            // join 
+            var orders = await _salesContext.Orders
+                    .Join(
+                        _salesContext.Products,
+                        order => order.ProductId,
+                        product => product.Id,
+                        (order, product) => new { Order = order, Product = product }
+                    )
+                    .Select(_ => new OrdersDto
+                    {
+                        Id = _.Order.Id,
+                        OrderDate = _.Order.OrderDate,
+                        UserId = _.Order.UserId,
+                        ProductInfo = new ProductDto
+                        {
+                            Id = _.Product.Id,
+                            Name = _.Product.Name
+                        }
+                    }).ToListAsync();
+
             return Ok(orders);
         }
 
