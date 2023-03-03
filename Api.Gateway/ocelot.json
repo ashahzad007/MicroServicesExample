@@ -1,6 +1,7 @@
 {
   "Routes": [
     {
+      // micro service address downstream
       "DownstreamPathTemplate": "/products",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -9,6 +10,7 @@
           "Port": 5222
         }
       ],
+      // API Gatway Address for Users Upstream 
       "UpstreamPathTemplate": "/manufacture/products",
       "UpstreamHttpMethod": [ "Get", "Post" ]
     },
