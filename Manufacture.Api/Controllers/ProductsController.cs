@@ -1,6 +1,7 @@
 ﻿using Manufacture.Api.Data;
 using Manufacture.Api.Data.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Manufacture.Api.Controllers
 {
@@ -13,9 +14,19 @@ namespace Manufacture.Api.Controllers
         public ProductsController(ManufactureContext context)
         {
             _context = context;
-        }
+        } 
 
         [HttpGet]
+
+        public async Task<IActionResult> GetAsync() // get all data from products
+        {
+            var products = await _context.Products.ToListAsync();
+            return Ok(products);
+        }
+
+
+
+        [HttpGet]  // get by Id
         [Route("{id}")]
         public async Task<IActionResult> GetAsync(int id)
         {
@@ -23,7 +34,7 @@ namespace Manufacture.Api.Controllers
             return Ok(product);
         }
 
-        [HttpPost]
+        [HttpPost] // Create Action for posting data or adding record in the database 
         public async Task<IActionResult> PostAsync(Products newProduct )
         {
             _context.Products.Add(newProduct);
