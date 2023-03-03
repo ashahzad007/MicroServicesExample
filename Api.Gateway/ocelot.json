@@ -1,0 +1,53 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/products",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5222
+        }
+      ],
+      "UpstreamPathTemplate": "/manufacture/products",
+      "UpstreamHttpMethod": ["Get", "Post"]
+    },
+    {
+      "DownstreamPathTemplate": "/Orders",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5288
+        }
+      ],
+      "UpstreamPathTemplate": "/sales/orders",
+      "UpstreamHttpMethod": ["Get", "Post"]
+    },
+    {
+      "DownstreamPathTemplate": "/Products/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5222
+        }
+      ],
+      "UpstreamPathTemplate": "/manufacture/products/{id}",
+      "UpstreamHttpMethod": ["Get", "Post"]
+    },
+    {
+      "DownstreamPathTemplate": "/Orders/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5288
+        }
+      ],
+      "UpstreamPathTemplate": "/sales/orders/{id}",
+      "UpstreamHttpMethod": ["Get", "Post"]
+    }
+  ],
+  "GlobalConfiguration": {}
+}
