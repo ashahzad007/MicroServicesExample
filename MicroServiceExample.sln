@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Manufacture.Api", "Manufacture.Api\Manufacture.Api.csproj", "{81D3B8F6-46D7-4F59-9E0C-E000CF1C9237}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Manufacture.Api", "Manufacture.Api\Manufacture.Api.csproj", "{81D3B8F6-46D7-4F59-9E0C-E000CF1C9237}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesBusiness.Api", "SalesBusiness.Api\SalesBusiness.Api.csproj", "{14DDAF86-983B-4B50-83A7-C925C4DE49F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesBusiness.Api", "SalesBusiness.Api\SalesBusiness.Api.csproj", "{14DDAF86-983B-4B50-83A7-C925C4DE49F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
