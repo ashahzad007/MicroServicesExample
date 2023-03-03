@@ -1,0 +1,6 @@
+C:\Users\amir.shahzad\source\repos\MicroServiceExample\Shared.Models\bin\Debug\Shared.Models.dll
+C:\Users\amir.shahzad\source\repos\MicroServiceExample\Shared.Models\bin\Debug\Shared.Models.pdb
+C:\Users\amir.shahzad\source\repos\MicroServiceExample\Shared.Models\obj\Debug\Shared.Models.csproj.AssemblyReference.cache
+C:\Users\amir.shahzad\source\repos\MicroServiceExample\Shared.Models\obj\Debug\Shared.Models.csproj.CoreCompileInputs.cache
+C:\Users\amir.shahzad\source\repos\MicroServiceExample\Shared.Models\obj\Debug\Shared.Models.dll
+C:\Users\amir.shahzad\source\repos\MicroServiceExample\Shared.Models\obj\Debug\Shared.Models.pdb

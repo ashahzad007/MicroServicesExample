@@ -1,4 +1,6 @@
+using MassTransit;
 using Microsoft.EntityFrameworkCore;
+using SalesBusiness.Api.Consumer;
 using SalesBusiness.Api.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +16,24 @@ builder.Services.AddDbContext<SalesBusinessContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("SalesBusinessConnection"));
 });
+
+// Product Consumer Service / Configuration here
+//Host entry  rabbit MQ
+builder.Services.AddMassTransit(x => {
+    x.AddConsumer<ProductCreatedConsumer>();
+    x.UsingRabbitMq((cxt, cfg) => {
+        cfg.Host(new Uri("rabbitmq://localhost:4001"), h => {
+            h.Username("guest");
+            h.Password("guest");
+        });
+        cfg.ReceiveEndpoint("event-listener", e =>
+        {
+            e.ConfigureConsumer<ProductCreatedConsumer>(cxt);
+        });
+    });
+});
+
+
 
 var app = builder.Build();
 

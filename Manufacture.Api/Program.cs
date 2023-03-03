@@ -1,4 +1,5 @@
 using Manufacture.Api.Data;
+using MassTransit;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,18 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ManufactureContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("ManufactureDBConnection"));
+});
+
+// RabbitMQ Messgae Configuration along with MassTransit
+// front end portal
+builder.Services.AddMassTransit(options => {
+    options.UsingRabbitMq((context, cfg) => {
+        cfg.Host(new Uri("rabbitmq://localhost:4001"), h => {
+            h.Username("guest");
+            h.Password("guest");
+        });
+
+    });
 });
 
 var app = builder.Build();
