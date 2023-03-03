@@ -10,11 +10,11 @@
         }
       ],
       "UpstreamPathTemplate": "/manufacture/products",
-      "UpstreamHttpMethod": ["Get", "Post"]
+      "UpstreamHttpMethod": [ "Get", "Post" ]
     },
     {
-      "DownstreamPathTemplate": "/Orders",
-      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/orders",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -22,11 +22,11 @@
         }
       ],
       "UpstreamPathTemplate": "/sales/orders",
-      "UpstreamHttpMethod": ["Get", "Post"]
+      "UpstreamHttpMethod": [ "Get", "Post" ]
     },
     {
-      "DownstreamPathTemplate": "/Products/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/products/{id}",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -34,11 +34,11 @@
         }
       ],
       "UpstreamPathTemplate": "/manufacture/products/{id}",
-      "UpstreamHttpMethod": ["Get", "Post"]
+      "UpstreamHttpMethod": [ "Get", "Post" ]
     },
     {
-      "DownstreamPathTemplate": "/Orders/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/orders/{id}",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
@@ -46,7 +46,7 @@
         }
       ],
       "UpstreamPathTemplate": "/sales/orders/{id}",
-      "UpstreamHttpMethod": ["Get", "Post"]
+      "UpstreamHttpMethod": [ "Get", "Post" ]
     }
   ],
   "GlobalConfiguration": {}
