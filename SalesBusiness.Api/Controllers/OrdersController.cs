@@ -24,7 +24,8 @@ namespace SalesBusiness.Api.Controllers
         public async Task<IActionResult> GetAsync() // get all data from Orders Table
         {
             //var orders = await _salesContext.Orders.ToListAsync();
-            // join 
+            // join orders number and which product user orders its name and Id.
+            // we have already get from consumers class product data Id, Name etc
             var orders = await _salesContext.Orders
                     .Join(
                         _salesContext.Products,

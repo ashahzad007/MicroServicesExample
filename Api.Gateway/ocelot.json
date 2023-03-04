@@ -3,7 +3,7 @@
     {
       // micro service address downstream
       "DownstreamPathTemplate": "/products",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "http", // use https , if you configured Https support starting of the API project options
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",

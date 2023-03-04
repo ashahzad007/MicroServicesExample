@@ -49,6 +49,8 @@ namespace Manufacture.Api.Controllers
             // using Publish EndPoint to push the data to the Product Model Class which is ProductCreated // Two Microservice communicated with each other 
             // you can create All the propeties of the Product Class. i used only Two.
 
+            // send data to the Product Created in sahred class through Publish Endpoints.
+
             await _publishEndpoint.Publish<ProductCreated>(new ProductCreated
             {
                 Id = newProduct.Id,
